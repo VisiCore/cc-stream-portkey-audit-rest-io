@@ -64,6 +64,11 @@ Open the collector `vct_portkey_audit_logs` inside the pack, click **Run** in pr
 
 Upgrading in place keeps your pack variables and route output. If you add your own functions to the `vct_portkey_audit_logs` pipeline, copy the pipeline rather than editing it so upgrades do not overwrite your changes.
 
+## References
+
+- Portkey Admin API, List Audit Logs: https://portkey.ai/docs/api-reference/admin-api/control-plane/audit-logs/list-audit-logs
+- Portkey documentation home: https://portkey.ai/docs
+
 ## Authors
 
 - Andrew Hendrix <Andrewh@visicoretech.com>
