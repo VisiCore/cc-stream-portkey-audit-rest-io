@@ -1,0 +1,28 @@
+vct-portkey-audit-logs:
+  description: 'Portkey Admin API /v1/audit-logs: break the records[] array into events, _time from timestamp'
+  tags: vct,portkey,rest
+  minRawLength: 256
+  rules:
+  - name: portkey_audit_records
+    condition: 'true'
+    type: json_array
+    jsonArrayField: records
+    jsonExtractAll: true
+    timestampAnchorRegex: /"timestamp":\s*"/
+    jsonTimeField: timestamp
+    timestamp:
+      type: auto
+      length: 30
+    timestampTimezone: UTC
+    timestampEarliest: -420weeks
+    timestampLatest: +1week
+    maxEventBytes: 5000000
+    disabled: false
+    parserEnabled: false
+    shouldUseDataRaw: false
+    eventBreakerRegex: /[\n\r]+(?!\s)/
+    fields:
+    - name: sourcetype
+      value: '''portkey:audit'''
+    - name: datatype
+      value: '''portkey_audit_log'''

@@ -1,0 +1,8 @@
+output: default
+streamtags:
+- vct
+- portkey
+groups: {}
+asyncFuncTimeout: 1000
+description: Portkey audit-log events. Intentionally empty; add your own functions downstream or here.
+functions: []

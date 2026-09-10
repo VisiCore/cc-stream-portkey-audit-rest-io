@@ -1,0 +1,22 @@
+id: default
+routes:
+- id: vct_portkey_audit_logs
+  name: vct_portkey_audit_logs
+  final: true
+  disabled: false
+  pipeline: vct_portkey_audit_logs
+  description: Portkey audit logs from the pack collector. devnull is a placeholder; point at your SIEM/lake destination.
+  enableOutputExpression: false
+  filter: datatype=='portkey_audit_log'
+  clones: []
+  output: devnull
+- id: default
+  name: default
+  final: true
+  disabled: false
+  pipeline: main
+  description: ''
+  enableOutputExpression: false
+  filter: 'true'
+  clones: []
+  output: default
